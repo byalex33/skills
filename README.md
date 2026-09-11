@@ -2,6 +2,10 @@
 
 My personal skill collection, copied from my local Codex skills.
 
+## Install
+
+bruh get your agent to do it
+
 | Skill | Purpose |
 | --- | --- |
 | [babysit-pr](skills/babysit-pr/SKILL.md) | Get a pull request ready to merge. |
