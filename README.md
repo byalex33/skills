@@ -2,10 +2,6 @@
 
 My personal skill collection, copied from my local Codex skills.
 
-## Install
-
-bruh get your agent to do it
-
 | Skill | Purpose |
 | --- | --- |
 | [babysit-pr](skills/babysit-pr/SKILL.md) | Get a pull request ready to merge. |
@@ -16,3 +12,8 @@ Each skill lives in `skills/<skill-name>/SKILL.md`, with YAML `name` and `descri
 These are independent copies; edits here do not automatically update installed skills. Bundled system and plugin skills are excluded.
 
 The copied skills include personal workflow assumptions and permissions. Review them before using them in another environment.
+
+
+## Install
+
+bruh get your agent to do it
