@@ -4,6 +4,7 @@ My personal skill collection, copied from my local Codex skills.
 
 | Skill | Purpose |
 | --- | --- |
+| [every-x-explained](skills/every-x-explained/SKILL.md) | Make an "Every X Explained In N Minutes" video. |
 | [babysit-pr](skills/babysit-pr/SKILL.md) | Get a pull request ready to merge. |
 | [testing](skills/testing/SKILL.md) | Investigate incidental bugs found during testing and file issues. |
 
