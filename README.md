@@ -7,6 +7,7 @@ My personal skill collection, copied from my local Codex skills.
 | [every-x-explained](skills/every-x-explained/SKILL.md) | Make an "Every X Explained In N Minutes" video. |
 | [babysit-pr](skills/babysit-pr/SKILL.md) | Get a pull request ready to merge. |
 | [testing](skills/testing/SKILL.md) | Investigate incidental bugs found during testing and file issues. |
+| [bbb-thread](skills/bbb-thread/SKILL.md) | Make BuiltByBit listing assets: thread image, cover, update notes and BBCode. |
 
 Each skill lives in `skills/<skill-name>/SKILL.md`, with YAML `name` and `description` fields followed by its instructions. Keep supporting files beside the skill only when needed.
 

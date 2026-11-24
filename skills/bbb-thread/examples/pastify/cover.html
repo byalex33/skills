@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pastify cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>
+  /* Mint (tweakcn cmwfrzbat000004jqgblp73v5), dark tokens. 1024 x 512, rendered at 2x. */
+  :root {
+    --background: oklch(0 0 0);
+    --foreground: oklch(0.9551 0 0);
+    --card: oklch(0.1448 0 0);
+    --primary: oklch(0.8545 0.1675 159.6564);
+    --primary-foreground: oklch(0 0 0);
+    --muted-foreground: oklch(0.6731 0 0);
+    --accent: oklch(0.3004 0.0609 159.8938);
+    --border: oklch(0.2138 0.0019 286.2347);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1024px; height: 512px; overflow: hidden; position: relative;
+    background: var(--background); color: var(--foreground);
+    font-family: "Outfit", sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  /* Faint grid, fading out to the left. */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(70% 90% at 78% 50%, black, transparent);
+  }
+  .glow {
+    position: absolute; border-radius: 50%; pointer-events: none; filter: blur(10px);
+    background: radial-gradient(closest-side, oklch(0.8545 0.1675 159.6564 / 0.32), transparent);
+  }
+  .copy { position: absolute; left: 64px; top: 0; bottom: 0; width: 470px; display: flex; flex-direction: column; justify-content: center; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo {
+    width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center;
+    background: var(--primary); color: var(--primary-foreground);
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 22px;
+    box-shadow: 0 0 40px oklch(0.8545 0.1675 159.6564 / 0.45);
+  }
+  .version {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--primary); border: 1px solid oklch(0.8545 0.1675 159.6564 / 0.45);
+    padding: 5px 11px; border-radius: 999px;
+  }
+  h1 { font-size: 84px; font-weight: 800; letter-spacing: -0.055em; line-height: 0.95; margin-top: 26px; }
+  .tagline { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 14px; }
+  .tagline span { color: var(--primary); }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; max-width: 440px; }
+  .pills span {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px; font-size: 14px; font-weight: 500;
+    background: var(--card); border: 1px solid var(--border); color: var(--muted-foreground);
+  }
+  .pills svg { width: 14px; height: 14px; color: var(--primary); }
+
+  .shot {
+    position: absolute; left: 560px; top: 70px; width: 560px; height: 372px;
+    border-radius: 18px; overflow: hidden; background: var(--card); border: 1px solid var(--border);
+    box-shadow: 0 30px 80px oklch(0 0 0 / 0.75);
+    transform: perspective(1400px) rotateY(-9deg) rotateX(3deg);
+    transform-origin: left center;
+  }
+  .bar { height: 30px; display: flex; align-items: center; gap: 6px; padding: 0 13px; background: oklch(0.12 0 0); border-bottom: 1px solid var(--border); }
+  .bar i { width: 8px; height: 8px; border-radius: 50%; background: oklch(0.32 0 0); }
+  .shot img { display: block; width: 100%; height: calc(100% - 30px); object-fit: cover; object-position: top left; }
+
+  /* A small floating card: the API answer, for the new feature. */
+  .api {
+    position: absolute; left: 520px; top: 330px; width: 262px;
+    border-radius: 14px; background: oklch(0.11 0 0); border: 1px solid oklch(0.8545 0.1675 159.6564 / 0.35);
+    box-shadow: 0 20px 50px oklch(0 0 0 / 0.8), 0 0 30px oklch(0.8545 0.1675 159.6564 / 0.15);
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px; line-height: 1.7; padding: 12px 14px;
+  }
+  .api .head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 10.5px; letter-spacing: 0.1em; color: var(--muted-foreground); }
+  .api .post { background: var(--primary); color: var(--primary-foreground); padding: 1px 7px; border-radius: 999px; font-weight: 600; letter-spacing: 0.05em; }
+  .k { color: var(--primary); } .s { color: oklch(0.8104 0.1216 228.4326); } .p { color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow" style="width:820px;height:620px;left:500px;top:-60px"></div>
+  <div class="glow" style="width:420px;height:300px;left:-140px;top:-120px;opacity:.5"></div>
+
+  <div class="copy">
+    <div class="brand"><span class="logo">{}</span><span class="version">NEW 2.0.2</span></div>
+    <h1>Pastify</h1>
+    <p class="tagline">Share code in one link.<br /><span>Self-hosted</span> paste site.</p>
+    <div class="pills">
+      <span><i data-lucide="code-xml"></i>Public API</span>
+      <span><i data-lucide="chart-column"></i>Admin dashboard</span>
+      <span><i data-lucide="flame"></i>Burn after read</span>
+      <span><i data-lucide="bell-ring"></i>Discord alerts</span>
+      <span><i data-lucide="brush"></i>Clean-up tools</span>
+    </div>
+  </div>
+
+  <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="shots/view.png" alt="" /></div>
+
+  <div class="api">
+    <div class="head"><span class="post">POST</span>/documents</div>
+    <span class="p">{</span><br />
+    &nbsp;&nbsp;<span class="k">"key"</span>: <span class="s">"abc23xyz"</span>,<br />
+    &nbsp;&nbsp;<span class="k">"url"</span>: <span class="s">"…/view/abc23xyz"</span><br />
+    <span class="p">}</span>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
