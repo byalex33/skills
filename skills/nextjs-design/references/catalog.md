@@ -1,6 +1,6 @@
 # Component library catalog
 
-The user's reference libraries for Next.js design. Install commands and component names drift: confirm them on the component's own page before use (see SKILL.md step 4). "shadcn registry" means `npx shadcn@latest add ...` works.
+The user's reference libraries for Next.js design. Install commands and component names drift: confirm them on the component's own page before use (see SKILL.md step 5). "shadcn registry" means `npx shadcn@latest add ...` works.
 
 ## Pick by need
 
